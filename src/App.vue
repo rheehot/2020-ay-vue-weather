@@ -1,6 +1,7 @@
 <template lang="pug">
 	#app.container.d-flex.flex-column.justify-content-between
 		nav-bar
+		router-view.wrapper
 		footer-bar
 </template>
 
@@ -18,4 +19,5 @@ export default {
 
 <style lang="less">
 #app {height: 100vh; border-left: 1px solid #eee; border-right: 1px solid #eee; position: relative; }
+.wrapper {height: 100vh;}
 </style>

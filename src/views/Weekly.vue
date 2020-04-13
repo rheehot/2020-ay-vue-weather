@@ -1,6 +1,6 @@
 <template lang="pug">
 	div
-		h1 HOME
+		h1 WEEKLY
 </template>
 
 <script>
