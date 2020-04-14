@@ -1,11 +1,17 @@
 <template lang="pug">
-	div
-		h1 DAILY	
+	div.d-flex.flex-column.align-items-center.justify-content-center.border.text-center
+		div.city
+			h1 {{ GET_DAILY.name }}
 </template>
 
 <script>
-export default {
+import { mapGetters } from 'vuex'
 
+export default {
+	name: 'Daily',
+	computed: {
+		...mapGetters(['GET_DAILY']),
+	}
 }
 </script>
 

@@ -30,4 +30,11 @@ const router = new VueRouter({
 	routes
 })
 
+// 시작페이지 지정
+router.beforeEach((to, from, next) => {
+	console.log(to);
+	console.log(from);
+	to.name !== "Home" && !from.name ? next({path: "/"}) : next();
+});
+
 export default router

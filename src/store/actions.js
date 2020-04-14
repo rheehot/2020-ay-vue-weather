@@ -5,9 +5,11 @@ export default {
 		commit('MUT_CITY', axCity())
 	},
 	async ACT_DAILY({ commit }, city) {
-		// 통신로직
-		console.log(	await axDaily(city)	);
-		commit('MUT_DAILY')
+		const { data } = await axDaily(city);
+		console.log('----- Daily -----');
+		console.log(data);
+		console.log('----- Daily -----');
+		commit('MUT_DAILY', data);
 	}
 }
 

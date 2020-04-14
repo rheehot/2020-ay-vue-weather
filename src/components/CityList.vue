@@ -28,10 +28,17 @@ export default {
 	},
 	computed: {
 		// 지정된 state가 변경될 때 값을 적용한다.
-		...mapGetters(['GET_CITY', 'GET_DAILY', 'GET_WEEKLY']),
+		...mapGetters(['GET_CITY', 'GET_DAILY']),
 	},
 	watch: {
 		// 지정된 state가 변경될 때 함수를 실행한다.
+		GET_DAILY(val, old) {
+			console.log("---- WATCH ----");
+			console.log(val);
+			console.log(old);
+			console.log("---- WATCH ----");
+			this.$router.push('/daily');
+		}
 	}
 }
 </script>
