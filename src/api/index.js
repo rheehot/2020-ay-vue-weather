@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+const appid = '02efdd64bdc14b279bc91d9247db4722';
+const dailyURL = 'https://api.openweathermap.org/data/2.5/weather';
+const weeklyURL = 'https://api.openweathermap.org/data/2.5/forecast';
+
 const cities = [
 	{ "name": "서울", "id": 1835848 },
 	{ "name": "인천", "id": 1843564 },
@@ -15,8 +19,9 @@ function axCity() {
 	return cities;
 }
 
-function axDaily() {
-	return;
+async function axDaily(city) {
+	// const result = await axios.get(url, params);
+	return await axios.get(dailyURL, {params: {units: "metric", appid: appid, id: city}});
 }
 
 function axWeekly() {
