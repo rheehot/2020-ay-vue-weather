@@ -1,0 +1,30 @@
+Band Website/웹사이트
+- Used skill / 사용기술 - HTML5, CSS3, ES5, jQuery3.4.1, wow.js
+- Features / 특징 - 반응형(Responsive), SPA(Single page Application), layout: Float Model
+- 학업 초반에 제작한 웹 사이트로 반응형 적용을 100% 완료하였으며, SPA사이트로 제작되었습니다. 
+
+Architect 
+- Used skill / 사용기술 - HTML5, CSS3, ES5, jQuery3.4.1, Bootstrap4
+- Features / 특징 - 반응형(Responsive), SPA(Single page Application), layout: Flex
+
+Proto
+- Used skill / 사용기술 - HTML5, CSS3, ES5, jQuery3.4.1, Bootstrap4
+- Features / 특징 - Ajax연동, 반응형(Responsive)
+
+Guestbook
+- Used Skill - Node.js12, Express4, MySQL 5.7, HTML5, CSS3, ES5, jQuery3.4.1, Bootstrap4,
+- Features / 특징 - Ajax API, PUG, Mysql2 Module ... 
+- MySQL5.7 데이터 베이스를 이용하여 방명록 CRUD를 구현하였습니다.
+
+날씨앱 - ES6
+- Features / 특징 - Ajax API, PUG, Mysql2 Module, data source: OpenWeatherMap 
+
+날씨앱 - Vue
+- Features / 특징 - vue, vue-router, vuex, vue-pug, axios, data source: OpenWeatherMap 
+
+
+
+
+
+
+
