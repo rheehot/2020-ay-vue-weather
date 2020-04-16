@@ -7,8 +7,6 @@ const DAILY_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const WEEKLY_URL = 'https://api.openweathermap.org/data/2.5/forecast';
 const ICON_URL = 'http://openweathermap.com/img/wn/' //01d@2x.png
 
-
-
 function axCity() {
 	return cities;
 }
@@ -25,7 +23,11 @@ async function axWeather(city) {
 	}
 	const daily = await axios.get(DAILY_URL, {params});
 	const weekly = await axios.get(WEEKLY_URL, {params});
+	daily.data.weather[0].icon = ICON_URL + daily.data.weather[0].icon + "@2x.png";
+	for(let v of weekly.data.list) {
+		v.weather[0].icon = ICON_URL + v.weather[0].icon + "@2x.png";
+	}
 	return { daily: daily.data, weekly: weekly.data };
 }
 
-export { axCity, axWeather, ICON_URL }
+export { axCity, axWeather }

@@ -1,4 +1,4 @@
-import { axCity, axWeather, ICON_URL } from '../api'
+import { axCity, axWeather } from '../api'
 
 export default {
 	ACT_CITY({ commit }) {
@@ -8,7 +8,6 @@ export default {
 		const { daily, weekly } = await axWeather(city);
 		
 		/* Daily */
-		daily.weather[0].icon = ICON_URL + daily.weather[0].icon + "@2x.png";
 		console.log('----- Daily -----');
 		console.log(daily);
 		console.log('----- Daily -----');
