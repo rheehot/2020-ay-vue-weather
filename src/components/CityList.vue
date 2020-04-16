@@ -18,8 +18,7 @@ export default {
 	},
 	methods: {
 		onChangeCity(e) {
-			this.$store.dispatch('ACT_DAILY', this.selCity);
-			//this.$store.dispatch('ACT_WEEKLY', this.selCity);
+			this.$store.dispatch('ACT_WEATHER', this.selCity);
 		}
 	},
 	created() {

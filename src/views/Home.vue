@@ -26,7 +26,7 @@ export default {
 	},
 	methods: {
 		onCoords(e) {
-			this.$store.dispatch("ACT_COORDS");
+			this.$store.dispatch("ACT_WEATHER", null);
 		}
 	}
 }

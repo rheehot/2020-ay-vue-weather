@@ -13,18 +13,19 @@ function axCity() {
 	return cities;
 }
 
-async function geoCoords() {
-	const { err, res } = await location();
-	return await axios.get(DAILY_URL, {params: {units: "metric", appid: APP_ID, lat: res.lat, lon: res.lon}});
+async function axWeather(city) {
+	const params = { units: "metric", appid: APP_ID }
+	if(city) {
+		params.id = city;
+	}
+	else {
+		const { res } = await location();
+		params.lat = res.lat;
+		params.lon = res.lon;
+	}
+	const daily = await axios.get(DAILY_URL, {params});
+	const weekly = await axios.get(WEEKLY_URL, {params});
+	return { daily: daily.data, weekly: weekly.data };
 }
 
-async function axDaily(city) {
-	// const result = await axios.get(url, params);
-	return await axios.get(DAILY_URL, {params: {units: "metric", appid: APP_ID, id: city}});
-}
-
-function axWeekly() {
-	return;
-}
-
-export { axCity, axDaily, axWeekly, geoCoords, ICON_URL }
+export { axCity, axWeather, ICON_URL }
