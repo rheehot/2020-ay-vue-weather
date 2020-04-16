@@ -1,31 +1,29 @@
 import axios from 'axios';
+import { cities } from './city';
+import location from './location';
 
-const appid = '02efdd64bdc14b279bc91d9247db4722';
-const dailyURL = 'https://api.openweathermap.org/data/2.5/weather';
-const weeklyURL = 'https://api.openweathermap.org/data/2.5/forecast';
+const APP_ID = '02efdd64bdc14b279bc91d9247db4722';
+const DAILY_URL = 'https://api.openweathermap.org/data/2.5/weather';
+const WEEKLY_URL = 'https://api.openweathermap.org/data/2.5/forecast';
+const ICON_URL = 'http://openweathermap.com/img/wn/' //01d@2x.png
 
-const cities = [
-	{ "name": "서울", "id": 1835848 },
-	{ "name": "인천", "id": 1843564 },
-	{ "name": "부산", "id": 1838722 },
-	{ "name": "대전", "id": 1835235 },
-	{ "name": "대구", "id": 1835329 },
-	{ "name": "제주", "id": 1846266 },
-	{ "name": "광주", "id": 1841810 },
-	{ "name": "목포", "id": 1841066 },
-];
+
 
 function axCity() {
+	const result = location();
+	console.log('----- api/index -----');
+	console.log(result);
+	console.log('----- api/index -----');
 	return cities;
 }
 
 async function axDaily(city) {
 	// const result = await axios.get(url, params);
-	return await axios.get(dailyURL, {params: {units: "metric", appid: appid, id: city}});
+	return await axios.get(DAILY_URL, {params: {units: "metric", appid: APP_ID, id: city}});
 }
 
 function axWeekly() {
 	return;
 }
 
-export { axCity, axDaily, axWeekly }
+export { axCity, axDaily, axWeekly, ICON_URL }
