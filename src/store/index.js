@@ -11,7 +11,7 @@ export default new Vuex.Store({
 		// 전역변수 선언
 		city: [],
 		daily: {},
-		weekly: [],
+		weekly: {},
 	},
 	getters, // 전역변수 가져오기
 	mutations, // 전역변수 변화 감지
