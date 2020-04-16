@@ -1,6 +1,8 @@
 import axios from 'axios';
+import moment from 'moment';
 import { cities } from './city';
 import location from './location';
+
 
 const APP_ID = '02efdd64bdc14b279bc91d9247db4722';
 const DAILY_URL = 'https://api.openweathermap.org/data/2.5/weather';
@@ -26,6 +28,7 @@ async function axWeather(city) {
 	daily.data.weather[0].icon = ICON_URL + daily.data.weather[0].icon + "@2x.png";
 	for(let v of weekly.data.list) {
 		v.weather[0].icon = ICON_URL + v.weather[0].icon + "@2x.png";
+		v.dt = moment(Number(v.dt)*1000).format('YYYY-MM-DD HH시');
 	}
 	return { daily: daily.data, weekly: weekly.data };
 }

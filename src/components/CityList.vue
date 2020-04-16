@@ -43,5 +43,5 @@ export default {
 </script>
 
 <style scoped lang="less">
-
+	.select-wrap {width: 90%; max-width: 800px; margin: 1rem auto;}
 </style>

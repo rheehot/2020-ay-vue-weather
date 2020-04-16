@@ -21,4 +21,6 @@ export default {
 <style lang="less">
 #app {height: 100vh; border-left: 1px solid #eee; border-right: 1px solid #eee; position: relative; }
 .wrapper {height: 100vh;}
+.container {padding: 0 !important;}
+ul {margin: 0 !important; padding: 0 !important; list-style: none;}
 </style>
