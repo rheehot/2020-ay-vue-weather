@@ -1,4 +1,4 @@
-import { axCity, axDaily, axWeekly, ICON_URL } from '../api'
+import { axCity, axDaily, axWeekly, geoCoords, ICON_URL } from '../api'
 
 export default {
 	ACT_CITY({ commit }) {
@@ -10,6 +10,11 @@ export default {
 		console.log('----- Daily -----');
 		console.log(data);
 		console.log('----- Daily -----');
+		commit('MUT_DAILY', data);
+	},
+	async ACT_COORDS({ commit }) {
+		const { data } = await geoCoords();
+		data.weather[0].icon = ICON_URL + data.weather[0].icon + "@2x.png";
 		commit('MUT_DAILY', data);
 	}
 }

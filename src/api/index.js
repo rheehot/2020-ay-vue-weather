@@ -10,11 +10,12 @@ const ICON_URL = 'http://openweathermap.com/img/wn/' //01d@2x.png
 
 
 function axCity() {
-	const result = location();
-	console.log('----- api/index -----');
-	console.log(result);
-	console.log('----- api/index -----');
 	return cities;
+}
+
+async function geoCoords() {
+	const { err, res } = await location();
+	return await axios.get(DAILY_URL, {params: {units: "metric", appid: APP_ID, lat: res.lat, lon: res.lon}});
 }
 
 async function axDaily(city) {
@@ -26,4 +27,4 @@ function axWeekly() {
 	return;
 }
 
-export { axCity, axDaily, axWeekly, ICON_URL }
+export { axCity, axDaily, axWeekly, geoCoords, ICON_URL }
