@@ -19,5 +19,5 @@ export default {
 </script>
 
 <style scoped lang="less">
-
+.icon {max-width: 300px;}
 </style>

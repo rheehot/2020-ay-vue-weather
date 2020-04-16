@@ -25,9 +25,11 @@ async function axWeather(city) {
 	}
 	const daily = await axios.get(DAILY_URL, {params});
 	const weekly = await axios.get(WEEKLY_URL, {params});
-	daily.data.weather[0].icon = ICON_URL + daily.data.weather[0].icon + "@2x.png";
+	//daily.data.weather[0].icon = ICON_URL + daily.data.weather[0].icon + "@2x.png";
+	daily.data.weather[0].icon = "/icon/" + daily.data.weather[0].icon + ".png";
 	for(let v of weekly.data.list) {
-		v.weather[0].icon = ICON_URL + v.weather[0].icon + "@2x.png";
+		// v.weather[0].icon = ICON_URL + v.weather[0].icon + "@2x.png";
+		v.weather[0].icon = "/icon/" + v.weather[0].icon + ".png";
 		v.dt = moment(Number(v.dt)*1000).format('YYYY-MM-DD HH시');
 	}
 	return { daily: daily.data, weekly: weekly.data };
